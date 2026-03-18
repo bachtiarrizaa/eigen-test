@@ -1,7 +1,7 @@
 import { EntityManager } from '@mikro-orm/core';
 import { Seeder } from '@mikro-orm/seeder';
-import { BookSeeder } from './BookSeeder';
-import { MemberSeeder } from './MemberSeeder';
+import { BookSeeder } from './book.seeder';
+import { MemberSeeder } from './member.seeder';
 
 export class DatabaseSeeder extends Seeder {
   run(em: EntityManager): Promise<void> {

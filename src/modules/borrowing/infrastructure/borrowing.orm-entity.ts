@@ -1,4 +1,9 @@
-import { Entity, ManyToOne, PrimaryKey, Property } from '@mikro-orm/decorators/legacy';
+import {
+  Entity,
+  ManyToOne,
+  PrimaryKey,
+  Property,
+} from '@mikro-orm/decorators/legacy';
 import { MemberOrmEntity } from '../../member/infrastructure/member.orm-entity';
 import { BookOrmEntity } from '../../book/infrastructure/book.orm-entity';
 
