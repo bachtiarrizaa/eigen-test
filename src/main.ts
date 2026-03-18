@@ -1,13 +1,20 @@
-import { NestFactory } from '@nestjs/core';
+import { NestFactory, Reflector } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
+import { TransformInterceptor } from './common/interceptors/response.interceptor';
+import { GlobalExceptionFilter } from './common/filters/http-exception.filter';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   // Global validation
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
+
+  // Gloval interceptor
+  app.useGlobalInterceptors(new TransformInterceptor(app.get(Reflector)));
+
+  app.useGlobalFilters(new GlobalExceptionFilter());
 
   // Swagger
   const config = new DocumentBuilder()
