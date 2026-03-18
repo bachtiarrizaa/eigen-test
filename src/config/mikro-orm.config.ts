@@ -15,12 +15,12 @@ export const mikroOrmConfig = defineConfig({
   debug: true,
   allowGlobalContext: true,
   migrations: {
-    path: 'dist/migrations',
-    pathTs: 'src/migrations',
+    path: 'dist/database/migrations',
+    pathTs: 'src/database/migrations',
   },
   seeder: {
-    path: 'dist/seeders',
-    pathTs: 'src/seeders',
+    path: 'dist/database/seeders',
+    pathTs: 'src/database/seeders',
   },
   extensions: [Migrator],
 });

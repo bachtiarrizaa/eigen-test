@@ -1,7 +1,7 @@
-import { Entity, Property, PrimaryKey } from '@mikro-orm/decorators/legacy';
+import { Entity, PrimaryKey, Property } from '@mikro-orm/decorators/legacy';
 
-@Entity({ tableName: 'books' })
-export class BookOrmEntity {
+@Entity({ tableName: 'members' })
+export class MemberOrmEntity {
   @PrimaryKey({ type: 'uuid' })
   id!: string;
 
@@ -9,13 +9,10 @@ export class BookOrmEntity {
   code!: string;
 
   @Property({ type: 'varchar' })
-  title!: string;
+  name!: string;
 
-  @Property({ type: 'varchar' })
-  author!: string;
-
-  @Property({ type: 'int' })
-  stock!: number;
+  @Property({ type: 'timestamptz', nullable: true })
+  penaltyEndDate!: Date | null;
 
   @Property({ type: 'timestamptz' })
   createdAt: Date = new Date();
