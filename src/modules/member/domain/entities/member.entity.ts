@@ -2,7 +2,7 @@ import { BaseEntity } from '../../../../common/domain/entities/base.entity';
 
 export class Member extends BaseEntity {
   constructor(
-    public readonly code: string,
+    public code: string,
     public name: string,
     public penaltyEndDate: Date | null = null,
     id?: string,
