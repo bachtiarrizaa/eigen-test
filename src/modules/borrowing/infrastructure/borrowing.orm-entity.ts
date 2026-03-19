@@ -8,7 +8,7 @@ import { MemberOrmEntity } from '../../member/infrastructure/member.orm-entity';
 import { BookOrmEntity } from '../../book/infrastructure/book.orm-entity';
 
 @Entity({ tableName: 'borrowings' })
-export class BorrowingEntity {
+export class BorrowingOrmEntity {
   @PrimaryKey({ type: 'uuid' })
   id!: string;
 

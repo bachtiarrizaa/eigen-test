@@ -21,6 +21,7 @@ export class Book extends BaseEntity {
     if (!this.isAvailable()) {
       throw new Error(`Book "${this.title}" is out of stock`);
     }
+    this.stock -= 1;
   }
 
   increaseStock(): void {

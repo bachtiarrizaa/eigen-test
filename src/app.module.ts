@@ -5,9 +5,15 @@ import { MikroOrmModule } from '@mikro-orm/nestjs';
 import mikroOrmConfig from './config/mikro-orm.config';
 import { BookModule } from './modules/book/book.module';
 import { MemberModule } from './modules/member/member.module';
+import { BorrowingModule } from './modules/borrowing/borrowing.module';
 
 @Module({
-  imports: [MikroOrmModule.forRoot(mikroOrmConfig), BookModule, MemberModule],
+  imports: [
+    MikroOrmModule.forRoot(mikroOrmConfig),
+    BookModule,
+    MemberModule,
+    BorrowingModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
