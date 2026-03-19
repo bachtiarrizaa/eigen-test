@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsNotEmpty, IsString, Min } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 import { IsBookCode } from '../../domain/validators/is-book-code.validator';
 
@@ -24,6 +24,7 @@ export class CreateBookDto {
 
   @ApiProperty({ example: 1 })
   @IsNotEmpty()
+  @Min(0)
   stock!: number;
 }
 
@@ -49,5 +50,6 @@ export class UpdateBookDto {
 
   @ApiProperty({ example: 1 })
   @IsNotEmpty()
+  @Min(0)
   stock!: number;
 }
